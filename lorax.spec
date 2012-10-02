@@ -9,7 +9,7 @@ Group:          Applications/System
 License:        GPLv2+
 URL:            http://git.fedorahosted.org/git/?p=lorax.git
 Source0:        https://fedorahosted.org/releases/l/o/%{name}/%{name}-%{version}.tar.gz
-
+Patch0:         lorax-18.12.noyum.patch
 BuildRequires:  python-devel
 
 Requires:       GConf2
@@ -30,7 +30,7 @@ Requires:       python-mako
 Requires:       squashfs-tools >= 4.2
 Requires:       util-linux
 Requires:       xz
-Requires:       yum
+#Requires:       yum
 Requires:       pykickstart
 
 %ifarch %{ix86} x86_64
@@ -58,6 +58,7 @@ Anaconda's image install feature.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 

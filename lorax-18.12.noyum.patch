@@ -1,0 +1,60 @@
+diff -Nur lorax-18.12.orig/lorax.spec lorax-18.12/lorax.spec
+--- lorax-18.12.orig/lorax.spec	2012-07-25 14:44:14.000000000 +0400
++++ lorax-18.12/lorax.spec	2012-10-02 11:51:43.000000000 +0400
+@@ -31,7 +31,7 @@
+ Requires:       squashfs-tools >= 4.2
+ Requires:       util-linux
+ Requires:       xz
+-Requires:       yum
++#Requires:       yum
+ Requires:       pykickstart
+ 
+ %ifarch %{ix86} x86_64
+diff -Nur lorax-18.12.orig/src/pylorax/__init__.py lorax-18.12/src/pylorax/__init__.py
+--- lorax-18.12.orig/src/pylorax/__init__.py	2012-07-25 14:44:14.000000000 +0400
++++ lorax-18.12/src/pylorax/__init__.py	2012-10-02 13:10:28.000000000 +0400
+@@ -36,7 +36,7 @@
+ from base import BaseLoraxClass, DataHolder
+ import output
+ 
+-import yum
++#import yum
+ import ltmpl
+ 
+ import imgutils
+diff -Nur lorax-18.12.orig/src/pylorax/yumhelper.py lorax-18.12/src/pylorax/yumhelper.py
+--- lorax-18.12.orig/src/pylorax/yumhelper.py	2012-07-25 14:44:14.000000000 +0400
++++ lorax-18.12/src/pylorax/yumhelper.py	2012-10-02 13:10:26.000000000 +0400
+@@ -22,7 +22,7 @@
+ import logging
+ logger = logging.getLogger("pylorax.yumhelper")
+ import sys, os, re
+-import yum, yum.callbacks, yum.rpmtrans
++#import yum, yum.callbacks, yum.rpmtrans
+ import output
+ 
+ __all__ = ['LoraxDownloadCallback', 'LoraxTransactionCallback',
+diff -Nur lorax-18.12.orig/src/sbin/lorax lorax-18.12/src/sbin/lorax
+--- lorax-18.12.orig/src/sbin/lorax	2012-07-25 14:44:14.000000000 +0400
++++ lorax-18.12/src/sbin/lorax	2012-10-02 13:10:23.000000000 +0400
+@@ -29,7 +29,7 @@
+ from optparse import OptionParser, OptionGroup
+ import ConfigParser
+ 
+-import yum
++#import yum
+ import pylorax
+ 
+ 
+diff -Nur lorax-18.12.orig/utils/filediff.py lorax-18.12/utils/filediff.py
+--- lorax-18.12.orig/utils/filediff.py	2012-07-25 14:44:14.000000000 +0400
++++ lorax-18.12/utils/filediff.py	2012-10-02 13:10:21.000000000 +0400
+@@ -2,7 +2,7 @@
+ import os
+ import magic
+ import difflib
+-import yum
++#import yum
+ import operator
+ 
+ 
