@@ -2,7 +2,7 @@
 
 Name:           lorax
 Version:        18.12
-Release:        2%{?dist}
+Release:        4
 Summary:        Tool for creating the anaconda install images
 
 Group:          Applications/System
