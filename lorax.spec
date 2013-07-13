@@ -1,41 +1,36 @@
 %define debug_package %{nil}
 
-Name:           lorax
-Version:        18.12
-Release:        7
-Summary:        Tool for creating the anaconda install images
-
-Group:          System/Base
-License:        GPLv2+
-URL:            http://git.fedorahosted.org/git/?p=lorax.git
-Source0:        https://fedorahosted.org/releases/l/o/%{name}/%{name}-%{version}.tar.gz
-#Patch0:         lorax-18.12.noyum.patch
-BuildRequires:  python-devel
-
-Requires:       GConf2
-Requires:       cpio
-Requires:       device-mapper
-Requires:       dosfstools
-Requires:       e2fsprogs
-Requires:       findutils
-Requires:       gawk
-Requires:       cdrkit-genisoimage
-Requires:       glibc
-Requires:       gzip
-Requires:       isomd5sum
-Requires:       python-selinux
-Requires:       module-init-tools
-Requires:       parted
-Requires:       python-mako
-Requires:       squashfs-tools >= 4.2
-Requires:       util-linux
-Requires:       xz
-Suggests:       yum
-Requires:       pykickstart
-
+Summary:	Tool for creating the anaconda install images
+Name:		lorax
+Version:	18.12
+Release:	7
+Group:		System/Base
+License:	GPLv2+
+Url:		http://git.fedorahosted.org/git/?p=lorax.git
+Source0:	https://fedorahosted.org/releases/l/o/%{name}/%{name}-%{version}.tar.gz
+BuildRequires:	pkgconfig(python)
+Requires:	cdrkit-genisoimage
+Requires:	cpio
+Requires:	device-mapper
+Requires:	dosfstools
+Requires:	e2fsprogs
+Requires:	findutils
+Requires:	gawk
+Requires:	GConf2
+Requires:	gzip
+Requires:	isomd5sum
+Requires:	python-selinux
+Requires:	module-init-tools
+Requires:	parted
+Requires:	python-mako
+Requires:	squashfs-tools >= 4.2
+Requires:	util-linux
+Requires:	xz
+Requires:	pykickstart
 %ifarch %{ix86} x86_64
-Requires:       syslinux >= 4.02-5
+Requires:	syslinux >= 4.02-5
 %endif
+Suggests:	yum
 
 %description
 Lorax is a tool for creating the anaconda install images.
