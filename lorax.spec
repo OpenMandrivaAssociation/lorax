@@ -3,7 +3,7 @@
 Summary:	Tool for creating the anaconda install images
 Name:		lorax
 Version:	18.12
-Release:	10
+Release:	11
 Group:		System/Base
 License:	GPLv2+
 Url:		http://git.fedorahosted.org/git/?p=lorax.git
