@@ -43,7 +43,11 @@ Anaconda's image install feature.
 %setup -q
 
 %build
-sed -i -e 's/env python/env python2/' setup.py
+export PYTHON=%{__python}
+sed -i -e 's/env python/python2/' setup.py
+sed -i -e 's/env python/python2/' src/sbin/livemedia-creator
+sed -i -e 's/env python/python2/' src/sbin/lorax
+sed -i -e 's/python/python2/' src/sbin/mkefiboot
 
 %install
 %makeinstall_std PYTHON=%{__python}
