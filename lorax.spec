@@ -43,6 +43,7 @@ Anaconda's image install feature.
 %setup -q
 
 %build
+sed -i -e 's/env python/env python2/' build.py
 
 %install
 %makeinstall_std PYTHON=%{__python}
