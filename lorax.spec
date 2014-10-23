@@ -3,12 +3,12 @@
 Summary:	Tool for creating the anaconda install images
 Name:		lorax
 Version:	18.12
-Release:	14
+Release:	15
 Group:		System/Base
 License:	GPLv2+
 Url:		http://git.fedorahosted.org/git/?p=lorax.git
 Source0:	https://fedorahosted.org/releases/l/o/%{name}/%{name}-%{version}.tar.gz
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 Requires:	cdrkit-genisoimage
 Requires:	cpio
 Requires:	device-mapper
@@ -45,12 +45,12 @@ Anaconda's image install feature.
 %build
 
 %install
-%makeinstall_std
+%makeinstall_std PYTHON=%{__python}
 
 %files
 %doc COPYING AUTHORS README.livemedia-creator
-%{python_sitelib}/pylorax
-%{python_sitelib}/*.egg-info
+%{python2_sitelib}/pylorax
+%{python2_sitelib}/*.egg-info
 %{_sbindir}/lorax
 %{_sbindir}/mkefiboot
 %{_sbindir}/livemedia-creator
