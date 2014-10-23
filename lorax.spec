@@ -43,14 +43,14 @@ Anaconda's image install feature.
 %setup -q
 
 %build
-export PYTHON=%{__python}
+export PYTHON=%{__python2}
 sed -i -e 's/env python/python2/' setup.py
 sed -i -e 's/env python/python2/' src/sbin/livemedia-creator
 sed -i -e 's/env python/python2/' src/sbin/lorax
 sed -i -e 's/python/python2/' src/sbin/mkefiboot
 
 %install
-%makeinstall_std PYTHON=%{__python}
+%makeinstall_std PYTHON=%{__python2}
 
 %files
 %doc COPYING AUTHORS README.livemedia-creator
@@ -63,4 +63,3 @@ sed -i -e 's/python/python2/' src/sbin/mkefiboot
 %config(noreplace) %{_sysconfdir}/lorax/lorax.conf
 %dir %{_datadir}/lorax
 %{_datadir}/lorax/*
-
