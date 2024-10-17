@@ -6,7 +6,7 @@ Version:	18.12
 Release:	22
 Group:		System/Base
 License:	GPLv2+
-Url:		http://git.fedorahosted.org/git/?p=lorax.git
+Url:		https://git.fedorahosted.org/git/?p=lorax.git
 Source0:	https://fedorahosted.org/releases/l/o/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(python2)
 Requires:	cdrkit-genisoimage
